@@ -13,6 +13,7 @@
 		697951A31F17BA240095046F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697951A21F17BA240095046F /* Assets.xcassets */; };
 		697951A61F17BA240095046F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697951A41F17BA240095046F /* Main.storyboard */; };
 		697951B11F17BA240095046F /* MWFontVariationsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */; };
+		697951C01F17BAA00095046F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697951BF1F17BAA00095046F /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		697951AC1F17BA240095046F /* MWFontVariationsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWFontVariationsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWFontVariationsDemoTests.m; sourceTree = "<group>"; };
 		697951B21F17BA240095046F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		697951BF1F17BAA00095046F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697951C01F17BAA00095046F /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 			children = (
 				697951981F17BA240095046F /* MWFontVariationsDemo */,
 				697951AF1F17BA240095046F /* MWFontVariationsDemoTests */,
+				697951BE1F17BAA00095046F /* Frameworks */,
 				697951971F17BA240095046F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +110,14 @@
 				697951B21F17BA240095046F /* Info.plist */,
 			);
 			path = MWFontVariationsDemoTests;
+			sourceTree = "<group>";
+		};
+		697951BE1F17BAA00095046F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				697951BF1F17BAA00095046F /* CoreText.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

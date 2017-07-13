@@ -7,33 +7,36 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <CoreText/CoreText.h>
+
 
 @interface MWFontVariationsDemoTests : XCTestCase
 
 @end
 
+
 @implementation MWFontVariationsDemoTests
+
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
+
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+- (void)testExample
+{
+    NSFont *font = [NSFont fontWithName:@"Skia" size:120];
+    NSLog(@"font: %@", font);
+    NSArray *variationAxes = CFBridgingRelease(CTFontCopyVariationAxes((CTFontRef)font));
+    NSLog(@"variationAxes: %@", variationAxes);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 @end
