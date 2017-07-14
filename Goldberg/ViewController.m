@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  MWFontVariationsDemo
+//  Goldberg
 //
 //  Created by Martin Winter on 13.07.17.
 //  Copyright © 2017 Martin Winter Ltd. All rights reserved.
@@ -26,15 +26,6 @@ static NSString * const MWFontVariationAxisCurrentValueKey = @"MWFontVariationAx
 
 
 @implementation ViewController
-
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-
-    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"MWFontVariationAxisItem" bundle:nil];
-    [self.collectionView registerNib:nib forItemWithIdentifier:MWFontVariationAxisItemIdentifier];
-}
 
 
 - (void)viewDidLoad
@@ -106,8 +97,18 @@ static NSString * const MWFontVariationAxisCurrentValueKey = @"MWFontVariationAx
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView
      itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
 {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^ {
+        NSNib *nib = [[NSNib alloc] initWithNibNamed:NSStringFromClass([MWFontVariationAxisItem class]) bundle:nil];
+        [collectionView registerNib:nib forItemWithIdentifier:MWFontVariationAxisItemIdentifier];
+    });
+
     MWFontVariationAxisItem *item = [collectionView makeItemWithIdentifier:MWFontVariationAxisItemIdentifier
                                                               forIndexPath:indexPath];
+    if (!item) {
+        NSLog(@"%s  item == nil", __PRETTY_FUNCTION__);
+        return nil;
+    }
 
     NSDictionary *fontVariationAxis = self.fontVariationAxes[[indexPath indexAtPosition:1]];
 

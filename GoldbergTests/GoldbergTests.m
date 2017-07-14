@@ -1,6 +1,6 @@
 //
-//  MWFontVariationsDemoTests.m
-//  MWFontVariationsDemoTests
+//  GoldbergTests.m
+//  GoldbergTests
 //
 //  Created by Martin Winter on 13.07.17.
 //  Copyright © 2017 Martin Winter Ltd. All rights reserved.
@@ -10,12 +10,12 @@
 #import <CoreText/CoreText.h>
 
 
-@interface MWFontVariationsDemoTests : XCTestCase
+@interface GoldbergTests : XCTestCase
 
 @end
 
 
-@implementation MWFontVariationsDemoTests
+@implementation GoldbergTests
 
 
 - (void)setUp {

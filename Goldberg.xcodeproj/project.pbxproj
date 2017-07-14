@@ -12,7 +12,7 @@
 		697951A11F17BA240095046F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951A01F17BA240095046F /* ViewController.m */; };
 		697951A31F17BA240095046F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697951A21F17BA240095046F /* Assets.xcassets */; };
 		697951A61F17BA240095046F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697951A41F17BA240095046F /* Main.storyboard */; };
-		697951B11F17BA240095046F /* MWFontVariationsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */; };
+		697951B11F17BA240095046F /* GoldbergTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951B01F17BA240095046F /* GoldbergTests.m */; };
 		697951C01F17BAA00095046F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697951BF1F17BAA00095046F /* CoreText.framework */; };
 		697951C41F17D0290095046F /* MWFontVariationAxisItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951C21F17D0290095046F /* MWFontVariationAxisItem.m */; };
 		697951C51F17D0290095046F /* MWFontVariationAxisItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697951C31F17D0290095046F /* MWFontVariationAxisItem.xib */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		697951961F17BA240095046F /* MWFontVariationsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWFontVariationsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		697951961F17BA240095046F /* Goldberg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldberg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697951991F17BA240095046F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6979519A1F17BA240095046F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6979519D1F17BA240095046F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -38,8 +38,8 @@
 		697951A21F17BA240095046F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		697951A51F17BA240095046F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		697951A71F17BA240095046F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		697951AC1F17BA240095046F /* MWFontVariationsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWFontVariationsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWFontVariationsDemoTests.m; sourceTree = "<group>"; };
+		697951AC1F17BA240095046F /* GoldbergTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldbergTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		697951B01F17BA240095046F /* GoldbergTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoldbergTests.m; sourceTree = "<group>"; };
 		697951B21F17BA240095046F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		697951BF1F17BAA00095046F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		697951C11F17D0290095046F /* MWFontVariationAxisItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFontVariationAxisItem.h; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 		6979518D1F17BA240095046F = {
 			isa = PBXGroup;
 			children = (
-				697951981F17BA240095046F /* MWFontVariationsDemo */,
-				697951AF1F17BA240095046F /* MWFontVariationsDemoTests */,
+				697951981F17BA240095046F /* Goldberg */,
+				697951AF1F17BA240095046F /* GoldbergTests */,
 				697951BE1F17BAA00095046F /* Frameworks */,
 				697951971F17BA240095046F /* Products */,
 			);
@@ -79,13 +79,13 @@
 		697951971F17BA240095046F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				697951961F17BA240095046F /* MWFontVariationsDemo.app */,
-				697951AC1F17BA240095046F /* MWFontVariationsDemoTests.xctest */,
+				697951961F17BA240095046F /* Goldberg.app */,
+				697951AC1F17BA240095046F /* GoldbergTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		697951981F17BA240095046F /* MWFontVariationsDemo */ = {
+		697951981F17BA240095046F /* Goldberg */ = {
 			isa = PBXGroup;
 			children = (
 				697951991F17BA240095046F /* AppDelegate.h */,
@@ -100,7 +100,7 @@
 				697951A71F17BA240095046F /* Info.plist */,
 				6979519C1F17BA240095046F /* Supporting Files */,
 			);
-			path = MWFontVariationsDemo;
+			path = Goldberg;
 			sourceTree = "<group>";
 		};
 		6979519C1F17BA240095046F /* Supporting Files */ = {
@@ -111,13 +111,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		697951AF1F17BA240095046F /* MWFontVariationsDemoTests */ = {
+		697951AF1F17BA240095046F /* GoldbergTests */ = {
 			isa = PBXGroup;
 			children = (
-				697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */,
+				697951B01F17BA240095046F /* GoldbergTests.m */,
 				697951B21F17BA240095046F /* Info.plist */,
 			);
-			path = MWFontVariationsDemoTests;
+			path = GoldbergTests;
 			sourceTree = "<group>";
 		};
 		697951BE1F17BAA00095046F /* Frameworks */ = {
@@ -131,9 +131,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		697951951F17BA240095046F /* MWFontVariationsDemo */ = {
+		697951951F17BA240095046F /* Goldberg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 697951B51F17BA240095046F /* Build configuration list for PBXNativeTarget "MWFontVariationsDemo" */;
+			buildConfigurationList = 697951B51F17BA240095046F /* Build configuration list for PBXNativeTarget "Goldberg" */;
 			buildPhases = (
 				697951921F17BA240095046F /* Sources */,
 				697951931F17BA240095046F /* Frameworks */,
@@ -143,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = MWFontVariationsDemo;
+			name = Goldberg;
 			productName = MWFontVariationsDemo;
-			productReference = 697951961F17BA240095046F /* MWFontVariationsDemo.app */;
+			productReference = 697951961F17BA240095046F /* Goldberg.app */;
 			productType = "com.apple.product-type.application";
 		};
-		697951AB1F17BA240095046F /* MWFontVariationsDemoTests */ = {
+		697951AB1F17BA240095046F /* GoldbergTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 697951B81F17BA240095046F /* Build configuration list for PBXNativeTarget "MWFontVariationsDemoTests" */;
+			buildConfigurationList = 697951B81F17BA240095046F /* Build configuration list for PBXNativeTarget "GoldbergTests" */;
 			buildPhases = (
 				697951A81F17BA240095046F /* Sources */,
 				697951A91F17BA240095046F /* Frameworks */,
@@ -161,9 +161,9 @@
 			dependencies = (
 				697951AE1F17BA240095046F /* PBXTargetDependency */,
 			);
-			name = MWFontVariationsDemoTests;
+			name = GoldbergTests;
 			productName = MWFontVariationsDemoTests;
-			productReference = 697951AC1F17BA240095046F /* MWFontVariationsDemoTests.xctest */;
+			productReference = 697951AC1F17BA240095046F /* GoldbergTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 697951911F17BA240095046F /* Build configuration list for PBXProject "MWFontVariationsDemo" */;
+			buildConfigurationList = 697951911F17BA240095046F /* Build configuration list for PBXProject "Goldberg" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -201,8 +201,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				697951951F17BA240095046F /* MWFontVariationsDemo */,
-				697951AB1F17BA240095046F /* MWFontVariationsDemoTests */,
+				697951951F17BA240095046F /* Goldberg */,
+				697951AB1F17BA240095046F /* GoldbergTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				697951B11F17BA240095046F /* MWFontVariationsDemoTests.m in Sources */,
+				697951B11F17BA240095046F /* GoldbergTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +252,7 @@
 /* Begin PBXTargetDependency section */
 		697951AE1F17BA240095046F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 697951951F17BA240095046F /* MWFontVariationsDemo */;
+			target = 697951951F17BA240095046F /* Goldberg */;
 			targetProxy = 697951AD1F17BA240095046F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -364,9 +364,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 99AZ2EPV6Z;
-				INFOPLIST_FILE = MWFontVariationsDemo/Info.plist;
+				INFOPLIST_FILE = Goldberg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.MWFontVariationsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.Goldberg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -377,9 +377,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 99AZ2EPV6Z;
-				INFOPLIST_FILE = MWFontVariationsDemo/Info.plist;
+				INFOPLIST_FILE = Goldberg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.MWFontVariationsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.Goldberg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -390,11 +390,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 99AZ2EPV6Z;
-				INFOPLIST_FILE = MWFontVariationsDemoTests/Info.plist;
+				INFOPLIST_FILE = GoldbergTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.MWFontVariationsDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.GoldbergTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWFontVariationsDemo.app/Contents/MacOS/MWFontVariationsDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldberg.app/Contents/MacOS/Goldberg";
 			};
 			name = Debug;
 		};
@@ -404,18 +404,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 99AZ2EPV6Z;
-				INFOPLIST_FILE = MWFontVariationsDemoTests/Info.plist;
+				INFOPLIST_FILE = GoldbergTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.MWFontVariationsDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwinter.GoldbergTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWFontVariationsDemo.app/Contents/MacOS/MWFontVariationsDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldberg.app/Contents/MacOS/Goldberg";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		697951911F17BA240095046F /* Build configuration list for PBXProject "MWFontVariationsDemo" */ = {
+		697951911F17BA240095046F /* Build configuration list for PBXProject "Goldberg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				697951B31F17BA240095046F /* Debug */,
@@ -424,21 +424,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		697951B51F17BA240095046F /* Build configuration list for PBXNativeTarget "MWFontVariationsDemo" */ = {
+		697951B51F17BA240095046F /* Build configuration list for PBXNativeTarget "Goldberg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				697951B61F17BA240095046F /* Debug */,
 				697951B71F17BA240095046F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		697951B81F17BA240095046F /* Build configuration list for PBXNativeTarget "MWFontVariationsDemoTests" */ = {
+		697951B81F17BA240095046F /* Build configuration list for PBXNativeTarget "GoldbergTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				697951B91F17BA240095046F /* Debug */,
 				697951BA1F17BA240095046F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
