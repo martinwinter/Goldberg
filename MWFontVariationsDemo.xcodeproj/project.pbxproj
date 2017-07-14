@@ -14,6 +14,8 @@
 		697951A61F17BA240095046F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697951A41F17BA240095046F /* Main.storyboard */; };
 		697951B11F17BA240095046F /* MWFontVariationsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */; };
 		697951C01F17BAA00095046F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697951BF1F17BAA00095046F /* CoreText.framework */; };
+		697951C41F17D0290095046F /* MWFontVariationAxisItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 697951C21F17D0290095046F /* MWFontVariationAxisItem.m */; };
+		697951C51F17D0290095046F /* MWFontVariationAxisItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697951C31F17D0290095046F /* MWFontVariationAxisItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		697951B01F17BA240095046F /* MWFontVariationsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWFontVariationsDemoTests.m; sourceTree = "<group>"; };
 		697951B21F17BA240095046F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		697951BF1F17BAA00095046F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		697951C11F17D0290095046F /* MWFontVariationAxisItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFontVariationAxisItem.h; sourceTree = "<group>"; };
+		697951C21F17D0290095046F /* MWFontVariationAxisItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFontVariationAxisItem.m; sourceTree = "<group>"; };
+		697951C31F17D0290095046F /* MWFontVariationAxisItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWFontVariationAxisItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,9 @@
 				6979519A1F17BA240095046F /* AppDelegate.m */,
 				6979519F1F17BA240095046F /* ViewController.h */,
 				697951A01F17BA240095046F /* ViewController.m */,
+				697951C11F17D0290095046F /* MWFontVariationAxisItem.h */,
+				697951C21F17D0290095046F /* MWFontVariationAxisItem.m */,
+				697951C31F17D0290095046F /* MWFontVariationAxisItem.xib */,
 				697951A21F17BA240095046F /* Assets.xcassets */,
 				697951A41F17BA240095046F /* Main.storyboard */,
 				697951A71F17BA240095046F /* Info.plist */,
@@ -204,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697951C51F17D0290095046F /* MWFontVariationAxisItem.xib in Resources */,
 				697951A31F17BA240095046F /* Assets.xcassets in Resources */,
 				697951A61F17BA240095046F /* Main.storyboard in Resources */,
 			);
@@ -224,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				697951A11F17BA240095046F /* ViewController.m in Sources */,
+				697951C41F17D0290095046F /* MWFontVariationAxisItem.m in Sources */,
 				6979519E1F17BA240095046F /* main.m in Sources */,
 				6979519B1F17BA240095046F /* AppDelegate.m in Sources */,
 			);

@@ -7,17 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "MWFontVariationAxisItem.h"
 #import <CoreText/CoreText.h>
 
 
-@interface ViewController ()
+static NSString * const MWFontVariationAxisItemIdentifier  = @"MWFontVariationAxisItemIdentifier";
+static NSString * const MWFontVariationAxisCurrentValueKey = @"MWFontVariationAxisCurrentValueKey";
+
+
+@interface ViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, MWFontVariationAxisItemDelegate>
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
-@property (weak) IBOutlet NSSlider *weightSlider;
-@property (weak) IBOutlet NSSlider *widthSlider;
+@property (weak) IBOutlet NSCollectionView *collectionView;
 
-@property (nonatomic) CGFloat weight;
-@property (nonatomic) CGFloat width;
+@property (nonatomic) NSArray *fontVariationAxes;
 
 @end
 
@@ -25,25 +28,32 @@
 @implementation ViewController
 
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+
+    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"MWFontVariationAxisItem" bundle:nil];
+    [self.collectionView registerNib:nib forItemWithIdentifier:MWFontVariationAxisItemIdentifier];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     NSFont *font = [NSFont fontWithName:@"Skia" size:200];
-    NSArray *variationAxes = CFBridgingRelease(CTFontCopyVariationAxes((CTFontRef)font));
-    for (NSDictionary *variationAxis in variationAxes) {
-        if ([variationAxis[NSFontVariationAxisNameKey] isEqualToString:@"Weight"]) {
-            self.weightSlider.minValue   = ((NSNumber *)variationAxis[NSFontVariationAxisMinimumValueKey]).floatValue;
-            self.weightSlider.maxValue   = ((NSNumber *)variationAxis[NSFontVariationAxisMaximumValueKey]).floatValue;
-            self.weightSlider.floatValue = ((NSNumber *)variationAxis[NSFontVariationAxisDefaultValueKey]).floatValue;
-        }
+    NSArray *fontVariationAxes = CFBridgingRelease(CTFontCopyVariationAxes((CTFontRef)font));
 
-        if ([variationAxis[NSFontVariationAxisNameKey] isEqualToString:@"Width"]) {
-            self.widthSlider.minValue   = ((NSNumber *)variationAxis[NSFontVariationAxisMinimumValueKey]).floatValue;
-            self.widthSlider.maxValue   = ((NSNumber *)variationAxis[NSFontVariationAxisMaximumValueKey]).floatValue;
-            self.widthSlider.floatValue = ((NSNumber *)variationAxis[NSFontVariationAxisDefaultValueKey]).floatValue;
-        }
+    // Make variation axis dictionaries mutable and add initial current values.
+    // TODO: Replace with dedicated model objects.
+    NSMutableArray *mutableFontVariationAxes = [NSMutableArray new];
+    for (NSDictionary *fontVariationAxis in fontVariationAxes) {
+        NSMutableDictionary *mutableFontVariationAxis = [fontVariationAxis mutableCopy];
+        mutableFontVariationAxis[MWFontVariationAxisCurrentValueKey] = fontVariationAxis[NSFontVariationAxisDefaultValueKey];
+        [mutableFontVariationAxes addObject:mutableFontVariationAxis];
     }
+
+    self.fontVariationAxes = [mutableFontVariationAxes copy];
 
     self.textView.string = @"Hello";
     [self updateView];
@@ -61,19 +71,64 @@
 #pragma mark -
 
 
-- (IBAction)handleSliderMoved:(id)sender
+- (void)updateView
 {
-    [self updateView];
+    __block NSMutableDictionary *fontVariationAttributes = [NSMutableDictionary new];
+    [self.fontVariationAxes enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull fontVariationAxis, NSUInteger idx, BOOL * _Nonnull stop) {
+        // TODO: share same model objects between view controller and collection items
+        MWFontVariationAxisItem *item = (MWFontVariationAxisItem *)[self.collectionView itemAtIndex:idx];
+        if (item) {
+            fontVariationAxis[MWFontVariationAxisCurrentValueKey] = item.currentValue;
+        }
+
+        fontVariationAttributes[fontVariationAxis[NSFontVariationAxisNameKey]] = fontVariationAxis[MWFontVariationAxisCurrentValueKey];
+    }];
+
+    NSFontDescriptor *descriptor = [NSFontDescriptor fontDescriptorWithFontAttributes:@{NSFontNameAttribute:      @"Skia",
+                                                                                        NSFontVariationAttribute: fontVariationAttributes}];
+    NSFont *font = [NSFont fontWithDescriptor:descriptor size:120.0];
+    self.textView.font = font;
 }
 
 
-- (void)updateView
+#pragma mark - NSCollectionViewDataSource
+
+
+- (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSFontDescriptor *descriptor = [NSFontDescriptor fontDescriptorWithFontAttributes:@{NSFontNameAttribute: @"Skia",
-                                                                                        NSFontVariationAttribute: @{@"Weight": @(self.weight),
-                                                                                                                    @"Width":  @(self.width)}}];
-    NSFont *font = [NSFont fontWithDescriptor:descriptor size:120.0];
-    self.textView.font = font;
+    return self.fontVariationAxes.count;
+}
+
+
+#pragma mark - NSCollectionViewDelegate
+
+
+- (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView
+     itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
+{
+    MWFontVariationAxisItem *item = [collectionView makeItemWithIdentifier:MWFontVariationAxisItemIdentifier
+                                                              forIndexPath:indexPath];
+
+    NSDictionary *fontVariationAxis = self.fontVariationAxes[[indexPath indexAtPosition:1]];
+
+    item.axisName     = fontVariationAxis[NSFontVariationAxisNameKey];
+    item.defaultValue = fontVariationAxis[NSFontVariationAxisDefaultValueKey];
+    item.minValue     = fontVariationAxis[NSFontVariationAxisMinimumValueKey];
+    item.maxValue     = fontVariationAxis[NSFontVariationAxisMaximumValueKey];
+    item.currentValue = fontVariationAxis[MWFontVariationAxisCurrentValueKey];
+
+    item.delegate = self;
+
+    return item;
+}
+
+
+#pragma mark - MWFontVariationAxisItemDelegate
+
+
+- (void)controlDidUpdate:(MWFontVariationAxisItem *)sender
+{
+    [self updateView];
 }
 
 
