@@ -32,7 +32,9 @@
 
 - (void)testExample
 {
-    NSFont *font = [NSFont fontWithName:@"Skia" size:120];
+    //NSString *fontName = @"Skia";
+    NSString *fontName = @"Hoefler Text";
+    NSFont *font = [NSFont fontWithName:fontName size:120];
     NSLog(@"font: %@", font);
     NSArray *variationAxes = CFBridgingRelease(CTFontCopyVariationAxes((CTFontRef)font));
     NSLog(@"variationAxes: %@", variationAxes);
